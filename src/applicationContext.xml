@@ -12,7 +12,14 @@
     	<property name="printedLoggerLevel" value="FINE"/>
     </bean>
     <!-- Define your beans here -->
+    
+    <bean id="myFortune"
+    	  class ="com.aku.springdemo.HappyFortuneService">
+    </bean>
+    
     <bean id= "myCoach"
-    	  class= "com.aku.springdemo.TrackCoach">
+    	  class= "com.aku.springdemo.TrackCoach">   	
+    	  <!-- Setting up the constructor -->
+    	  <constructor-arg ref="myFortune"/>
     </bean>
 </beans>
