@@ -2,17 +2,26 @@
  * 
  */
 package com.aku.springdemo;
-
+import java.util.Random;
 /**
  * @author akash
  *
  */
 public class HappyFortuneService implements FortuneService {
-
+	
+	
+	private String[] fortune = {
+			"Beware of Injuries",
+			"Extra efforts will lead fruitful results",
+			"Will become the hero of th game"
+	};
+	private Random myRandom = new Random();
 	@Override
 	public String getFortune() {
 		// TODO Auto-generated method stub
-		return "Today is a lucky day";
+		int index = myRandom.nextInt(fortune.length);
+		
+		return fortune[index];
 	}
 
 }
