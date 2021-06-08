@@ -6,6 +6,9 @@
     http://www.springframework.org/schema/beans/spring-beans.xsd
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
+    
+    <!-- Loading the properties File -->
+    <context:property-placeholder location="classpath:sports.properties"/>
 	
 	<bean id="myLoggerConfig" class="com.aku.springdemo.MyLoggerConfig" init-method="initLogger">
     	<property name="rootLoggerLevel" value="FINE" />
@@ -21,5 +24,14 @@
     	  class= "com.aku.springdemo.TrackCoach">   	
     	  <!-- Setting up the constructor -->
     	  <constructor-arg ref="myFortune"/>
+    </bean>
+    
+    <bean id="myCricketCoach"
+    	  class="com.aku.springdemo.CricketCoach">
+    	  <!-- setup setter injection -->
+    	  <!-- here  name is the private variable in the class and internally calls the setFortuneService method -->
+    	  <property name ="fortuneService" ref="myFortune"/>
+    	  <property name="emailAddress" value="${foo.email}"/>
+    	  <property name="team" value="${foo.team}"/>
     </bean>
 </beans>
