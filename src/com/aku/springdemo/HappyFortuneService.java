@@ -13,7 +13,7 @@ public class HappyFortuneService implements FortuneService {
 	private String[] fortune = {
 			"Beware of Injuries",
 			"Extra efforts will lead fruitful results",
-			"Will become the hero of th game"
+			"Will become the hero of the game"
 	};
 	private Random myRandom = new Random();
 	@Override
