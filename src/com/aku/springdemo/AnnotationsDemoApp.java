@@ -1,33 +1,22 @@
-/**
- * 
- */
 package com.aku.springdemo;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-/**
- * @author akash
- *
- */
-public class HelloSpringApp {
+public class AnnotationsDemoApp {
 
-	/**
-	 * @param args
-	 */
 	public static void main(String[] args) {
+		// TODO Auto-generated method stub
 		// load the spring configuration file
 		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
 				
 		// retrieve bean from spring container
-		Coach theCoach = context.getBean("myCoach", Coach.class); // id, interface
+		Coach theCoach = context.getBean("tennisCoach", Coach.class); // id, interface
 		
 		// call methods on the bean
 		System.out.println(theCoach.getDailyWorkout());
-		System.out.println(theCoach.getDailyFortune());
 		
 		// close the context
 		context.close();
-
 	}
 
 }

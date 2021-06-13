@@ -9,5 +9,4 @@ package com.aku.springdemo;
  */
 public interface Coach {
 	public String getDailyWorkout();
-	public String getDailyFortune();
 }
