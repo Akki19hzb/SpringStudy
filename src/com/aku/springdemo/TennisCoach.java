@@ -1,5 +1,6 @@
 package com.aku.springdemo;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 
@@ -7,14 +8,36 @@ import org.springframework.stereotype.Component;
 @Component
 public class TennisCoach implements Coach {
 
+	public FortuneService fortuneService;
+	
+
 	public  TennisCoach() {
 		// TODO Auto-generated constructor stub
-		System.out.println("Inside the default Constructor of TennisCoach");
+		System.out.println(">> TennisCoach: Inside the default Constructor");
 	}
+	
+	@Autowired
+	public void setFortuneService(FortuneService fortuneService) {
+		System.out.println(">> TennisCoach: Inside the setFortuneService");
+		this.fortuneService = fortuneService;
+	}
+
+	/*// Constructor Injection
+	@Autowired
+	public TennisCoach(FortuneService fortuneService) {
+		this.fortuneService = fortuneService;
+	}
+	*/
 	@Override
 	public String getDailyWorkout() {
 		// TODO Auto-generated method stub
 		return "Practice backend volley";
+	}
+	
+	@Override
+	public String getDailyFortune() {
+		// TODO Auto-generated method stub
+		return fortuneService.getFortune();
 	}
 
 }
