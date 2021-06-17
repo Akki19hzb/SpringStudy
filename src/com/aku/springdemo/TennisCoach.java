@@ -1,12 +1,14 @@
 package com.aku.springdemo;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 
 //@Component("tennisCoach") by default the id is the class name first letter small
 @Component
 public class TennisCoach implements Coach {
+	@Qualifier("randomFortuneService")
 	@Autowired
 	public FortuneService fortuneService;
 	
