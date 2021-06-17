@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 //@Component("tennisCoach") by default the id is the class name first letter small
 @Component
 public class TennisCoach implements Coach {
-
+	@Autowired
 	public FortuneService fortuneService;
 	
 
@@ -16,13 +16,15 @@ public class TennisCoach implements Coach {
 		System.out.println(">> TennisCoach: Inside the default Constructor");
 	}
 	
+	
+	/*
 	//Method Injection
 	@Autowired
 	public void doCrazyStuff(FortuneService fortuneService) {
 		System.out.println(">> TennisCoach: Inside the doCrazyStuff");
 		this.fortuneService =fortuneService;
 	}
-	
+	*/
 	/*
 	//Setter Injection
 	@Autowired
