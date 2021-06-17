@@ -11,5 +11,6 @@
     <!-- add entry to enable component scanning -->
    
    	<context:component-scan base-package="com.aku.springdemo"/> 
+   	<context:property-placeholder location="classpath:sports.properties"/>
     
 </beans>
