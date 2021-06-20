@@ -6,7 +6,8 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 
 @Configuration
-//@ComponentScan("com.aku.springdemo")
+//to remove the use of XML file we used ComponentScan which created bean automatically for all the classes using @Component
+//@ComponentScan("com.aku.springdemo")  
 @PropertySource("classpath:sports.properties")
 public class SportConfig {
 	/*
