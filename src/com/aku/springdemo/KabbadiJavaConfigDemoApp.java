@@ -10,7 +10,12 @@ public class KabbadiJavaConfigDemoApp {
 		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SportConfig.class);
 				
 		// retrieve bean from spring container
-		Coach theCoach = context.getBean("kabbadiCoach", Coach.class); // id, interface
+		KabbadiCoach theCoach = context.getBean("kabbadiCoach", KabbadiCoach.class); // id, interface
+		
+		//get email and team
+		System.out.println("Email :"+ theCoach.getEmail());
+		
+		System.out.println("Team: " + theCoach.getTeam());
 		
 		// call methods on the bean
 		System.out.println(theCoach.getDailyWorkout());

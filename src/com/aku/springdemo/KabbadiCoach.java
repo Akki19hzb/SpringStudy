@@ -1,5 +1,7 @@
 package com.aku.springdemo;
 
+import org.springframework.beans.factory.annotation.Value;
+
 public class KabbadiCoach implements Coach {
 
 	private FortuneService fortuneService;
@@ -7,6 +9,20 @@ public class KabbadiCoach implements Coach {
 	
 	public KabbadiCoach(FortuneService fortuneService) {
 		this.fortuneService = fortuneService;
+	}
+	
+	@Value("${foo.email}")
+	private String email;
+	
+	@Value("${foo.team}")
+	private String team;
+
+	public String getEmail() {
+		return email;
+	}
+
+	public String getTeam() {
+		return team;
 	}
 
 	@Override
